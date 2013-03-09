@@ -1,0 +1,70 @@
+prefixes = -webkit- -moz- ''
+
+.cube div 
+    width: 200px
+    height: 200px
+    position: absolute  
+
+style( name, value )
+    for pre in prefixes
+        {pre + name}: value
+
+cube-animation()
+    for pre in prefixes
+        {pre}animation-name: rotate-3d
+        {pre}animation-iteration-count: infinite
+        {pre}animation-timing-function: linear
+        {pre}animation-duration: 4s     
+
+.cube
+    cube-animation()
+    for pre in prefixes
+        {pre}transform-style: preserve-3d
+        {pre}transition: -webkit-transform 2s
+        {pre}transform: rotateY( 0deg )
+
+    position: relative
+    width: 200px
+    height: 200px
+
+.cube:hover
+    style( animation-play-state, paused )
+
+
+@keyframes rotate-3d
+    from
+        style( transform, rotateY( 0deg ) rotateZ( 0deg ) )
+    to  
+        style( transform, rotateY( 360deg ) rotateZ( 360deg ) )
+
+.cube- 
+
+    &wrapper 
+        style( perspective, 1000px )
+        float: left
+        margin: 100px
+
+    &front
+        style( transform, rotate3d( 0, 0, 0, 0deg ) translate3d( 0px, 0px, 100px ) )
+        opacity: 0.6
+        background: white
+
+    &right
+        style( transform, rotate3d( 0, 1, 0, 90deg ) translate3d( 0px, 0px, 100px ) )
+        background: black
+
+    &left
+        style( transform, rotate3d( 0, 1, 0, 270deg ) translate3d( 0px, 0px, 100px ) )
+        background: blue
+
+    &top
+        style( transform, rotate3d( 1, 0, 0, 90deg ) translate3d( 0px, 0px, 100px ) )
+        background: yellow
+
+    &bottom
+        style( transform, rotate3d( 1, 0, 0, 270deg ) translate3d( 0px, 0px, 100px ) )
+        background: gray
+
+    &back
+        style( transform, rotate3d( 1, 0, 0, 180deg ) translate3d( 0px, 0px, 100px ) )
+        background: #007AFF
