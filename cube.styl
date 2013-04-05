@@ -1,27 +1,22 @@
 @import 'nib'
 
-.cube div 
-    width: 200px
-    height: 200px
-    position: absolute  
+BODY
+    font-family: Arial, sans-serif
+
+h1
+    text-align: center
+    margin: 0
 
 cube-animation()
     animation-name: rotate-3d
     animation-iteration-count: infinite
     animation-timing-function: linear
-    animation-duration: 4s     
+    animation-duration: 2s     
 
-.cube
+.cube_animation
     cube-animation()
-    transform-style: preserve-3d
-    transition: transform 2s
-    transform: rotateY( 0deg )
 
-    position: relative
-    width: 200px
-    height: 200px
-
-.cube:hover
+.cube_animation:hover
     animation-play-state: paused
 
 @keyframes rotate-3d
@@ -30,34 +25,68 @@ cube-animation()
     to  
         transform: rotateY( 360deg ) rotateZ( 360deg )
 
-.cube- 
+opacity    = .7
+cubeWidth  = 350px
+cubeHeight = 350px
+
+.cube
+    transform-style: preserve-3d
+    transition: transform 2s
+    transform: rotateY( 0deg ) rotateX( 0deg ) rotateZ( 0deg )
+
+    position: relative
+    width: cubeWidth
+    height: cubeHeight
+    margin: 200px auto 0 auto
+
+.cube-
 
     &wrapper 
-        perspective: 1000px
-        float: left
-        margin: 100px
+        perspective: 800px
+        perspective-origin: 50% 200px
+
+    &item
+        width: cubeWidth
+        height: cubeHeight
+        position: absolute
+        font-size: 100px
+        text-align: center  
+
+        span
+            width: cubeWidth
+            height: cubeHeight
+            display: table-cell
+            vertical-align: middle   
+            color: #fff           
 
     &front
-        transform: rotate3d( 0, 0, 0, 0deg ) translate3d( 0px, 0px, 100px )
-        opacity: 0.6
-        background: white
+        transform: rotate3d( 0, 0, 0, 0deg ) translate3d( 0px, 0px, cubeWidth / 2 )
+        background: gray
+        background: rgba( 128, 128, 128, opacity )
 
     &right
-        transform: rotate3d( 0, 1, 0, 90deg ) translate3d( 0px, 0px, 100px )
-        background: black
+        transform: rotate3d( 0, 1, 0, 90deg ) translate3d( 0px, 0px, cubeWidth / 2 )
+        background: #F90
+        background: rgba( 252, 151, 0, 0.7 )
 
     &left
-        transform: rotate3d( 0, 1, 0, 270deg ) translate3d( 0px, 0px, 100px )
+        transform: rotate3d( 0, 1, 0, 270deg ) translate3d( 0px, 0px, cubeWidth / 2 )
         background: blue
+        background: rgba( 0, 0, 255, opacity )
 
     &top
-        transform: rotate3d( 1, 0, 0, 90deg ) translate3d( 0px, 0px, 100px )
+        height: cubeWidth
+        transform: rotate3d( 1, 0, 0, 90deg ) translate3d( 0px, 0px, cubeWidth / 2 )
         background: yellow
+        background: rgba( 255, 255, 0, opacity )
 
     &bottom
-        transform: rotate3d( 1, 0, 0, 270deg ) translate3d( 0px, 0px, 100px )
-        background: gray
+        height: cubeWidth
+        transform: rotate3d( 1, 0, 0, 270deg ) translate3d( 0px, 0px, cubeWidth / 2 )
+        background: black
+        background: rgba( 0, 0, 0, opacity )
 
     &back
-        transform: rotate3d( 1, 0, 0, 180deg ) translate3d( 0px, 0px, 100px )
+        transform: rotate3d( 1, 0, 0, 180deg ) translate3d( 0px, 0px, cubeWidth / 2 )
         background: #007AFF
+        background: rgba( 0, 122, 255, opacity )
