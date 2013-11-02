@@ -52,11 +52,11 @@ pre {
   -o-transition: -o-transform 2s;
   -ms-transition: -ms-transform 2s;
   transition: transform 2s;
-  -webkit-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
-  -moz-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
-  -o-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
-  -ms-transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
-  transform: rotateX(-45deg) rotateY(45deg) rotateZ(0deg);
+  -webkit-transform: rotateX(-25deg) rotateY(45deg) rotateZ(0deg);
+  -moz-transform: rotateX(-25deg) rotateY(45deg) rotateZ(0deg);
+  -o-transform: rotateX(-25deg) rotateY(45deg) rotateZ(0deg);
+  -ms-transform: rotateX(-25deg) rotateY(45deg) rotateZ(0deg);
+  transform: rotateX(-25deg) rotateY(45deg) rotateZ(0deg);
   position: relative;
   width: 250px;
   height: 250px;
